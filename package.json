@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "somewhat youtube",
   "main": "src/index.ts",
+  "type": "module",
   "scripts": {
     "dev": "pnpm nodemon"
   },
