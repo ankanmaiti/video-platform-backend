@@ -1,0 +1,23 @@
+{
+  "name": "videoPlatform",
+  "version": "1.0.0",
+  "description": "somewhat youtube",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "pnpm nodemon"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.3.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.12.5",
+    "nodemon": "^3.1.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.4"
+  }
+}
