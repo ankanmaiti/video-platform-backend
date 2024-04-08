@@ -1,0 +1,14 @@
+build
+coverage
+
+/.vscode
+/node_modules
+/dist
+
+**/*.html
+
+
+*.env
+.env
+.env.*
+
