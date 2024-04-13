@@ -25,7 +25,7 @@ const userSchema = new Schema(
       type: String,
       required: [true, 'Fullname is required'],
       trim: true,
-      match: [/^[a-zA-Z]+$/, 'Fullname can only contain letters (upper/lower)'],
+      match: [/^[a-zA-Z\s]+$/, 'Fullname can only contain letters (upper/lower)'],
     },
     avatar: {
       type: String, // cloudinary url

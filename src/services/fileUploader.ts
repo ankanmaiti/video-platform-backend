@@ -33,7 +33,6 @@ export async function mediaUpload(path: string) {
   finally {
     // remove locally saved temp file
     fs.unlinkSync(path)
-    return null
   }
 }
 

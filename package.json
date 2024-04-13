@@ -4,7 +4,7 @@
   "description": "somewhat youtube",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "npm nodemon"
+    "dev": "nodemon"
   },
   "keywords": [],
   "author": "",
