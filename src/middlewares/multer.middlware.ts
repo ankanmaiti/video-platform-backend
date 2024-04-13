@@ -1,4 +1,3 @@
-import { randomUUID } from "crypto";
 import multer from "multer";
 
 /*
@@ -11,12 +10,14 @@ const storage = multer.diskStorage({
   destination: function(_req, _file, cb) {
     cb(null, "./public/temp")
   },
+
   filename: function(_req, file, cb) {
-    const uniqueSuffix = randomUUID()
-    cb(null, file.originalname + '-' + uniqueSuffix)
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9) 
+    const [filename, type] = file.originalname.split('.')
+    cb(null, filename + '-' + uniqueSuffix + '.' + type)
   }
 })
 
 export const upload = multer({
-  storage: storage,
+  storage,
 })

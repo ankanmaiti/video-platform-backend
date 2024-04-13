@@ -1,9 +1,10 @@
 import { Request, Response } from "express"
-import asyncHandler from "../utils/asyncHandler"
-import { ApiError } from "../utils/apiError"
-import { ApiResponse } from "../utils/apiResponse"
 import { User } from "../models/user.model"
 import { mediaUpload } from "../services/fileUploader"
+import { ApiError } from "../utils/apiError"
+import { ApiResponse } from "../utils/apiResponse"
+import asyncHandler from "../utils/asyncHandler"
+import { cleanFiles } from "../utils/cleanTempFiles"
 
 /* Steps to follow :
  * - get data
@@ -79,7 +80,7 @@ const registerUser = asyncHandler(async (req: Request, res: Response) => {
 
   // response
   return res.status(201).json(new ApiResponse(201, createdUser, "User register successfully"))
-})
+}, () => cleanFiles('./public/temp', [ '.gitkeep' ]))
 
 
 export {

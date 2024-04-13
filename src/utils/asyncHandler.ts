@@ -1,11 +1,12 @@
 import { NextFunction, Request, RequestHandler, Response } from "express";
 
-export default function asyncHandler(requestHandler: RequestHandler) {
+export default function asyncHandler(requestHandler: RequestHandler, clean: (() => void) | null = null) {
 
   return (req: Request, res: Response, next: NextFunction) => {
     Promise
       .resolve(requestHandler(req, res, next))
       .catch(error => next(error))
+      .finally(() => clean?.())
   }
 }
 
