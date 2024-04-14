@@ -1,16 +1,24 @@
 # video Platform
 
 ## Important Links
-- [Model link] (https://app.eraser.io/workspace/YtPqZ1VogxGy1jzIDkzj)
+[Model link] (https://app.eraser.io/workspace/YtPqZ1VogxGy1jzIDkzj)
 
 ## ENV variables
-1. PORT
-1. CORS_ORIGIN
-1. MONGODB_URL
-1. ACCESS_TOKEN_SECRET
-1. ACCESS_TOKEN_EXPIRY
-1. REFRESH_TOKEN_SECRET
-1. REFRESH_TOKEN_EXPIRY
-1. CLOUDINARY_CLOUD_NAME
-1. CLOUDINARY_API_KEY
-1. CLOUDINARY_API_SECRET
+setup your .env variables
+
+```env
+PORT=
+CORS_ORIGIN=
+
+MONGODB_URL=
+
+ACCESS_TOKEN_SECRET=
+ACCESS_TOKEN_EXPIRY=
+
+REFRESH_TOKEN_SECRET=
+REFRESH_TOKEN_EXPIRY=
+
+CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
+```
