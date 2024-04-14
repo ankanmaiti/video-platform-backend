@@ -6,7 +6,6 @@ export function cleanFiles(dirName: string, filesToKeep?: string[]) {
   const tempFiles = readdirSync(dirName)
 
   tempFiles?.forEach(file => {
-    console.log('file : ', file)
 
     if (filesToKeep?.some(fileToKeep => fileToKeep == file)) {
       return file
