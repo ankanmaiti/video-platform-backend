@@ -1,11 +1,22 @@
 import { NextFunction, Request, RequestHandler, Response } from "express";
+import { ApiError } from "./apiError";
 
 export default function asyncHandler(requestHandler: RequestHandler, clean: (() => void) | null = null) {
 
   return (req: Request, res: Response, next: NextFunction) => {
     Promise
       .resolve(requestHandler(req, res, next))
-      .catch(error => next(error))
+      .catch((error: ApiError) => {
+        res.status(error.statusCode).json(
+          {
+            statusCode: error.statusCode,
+            message: error.message,
+            success: false,
+            data: error.data
+          }
+        )
+        next(error)
+      })
       .finally(() => clean?.())
   }
 }
