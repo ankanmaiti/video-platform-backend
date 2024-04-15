@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { Schema, model, InferSchemaType, Document } from "mongoose";
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
 
@@ -90,3 +90,8 @@ userSchema.methods.generateRefreshToken = function() {
 }
 
 export const User = model('User', userSchema)
+export type UserType = InferSchemaType<typeof userSchema> & Document & {
+  isPasswordCorrect: (password: string) => Promise<string>,
+  generateAccessToken: () => string,
+  generateRefreshToken: () => string
+}

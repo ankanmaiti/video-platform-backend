@@ -1,7 +1,7 @@
 import { NextFunction, Request, RequestHandler, Response } from "express";
 import { ApiError } from "./apiError";
 
-export default function asyncHandler(requestHandler: RequestHandler, clean: (() => void) | null = null) {
+export function asyncHandler(requestHandler: RequestHandler, clean: (() => void) | null = null) {
 
   return (req: Request, res: Response, next: NextFunction) => {
     Promise
