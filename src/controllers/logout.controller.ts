@@ -10,7 +10,7 @@ import { ApiError } from "../utils/apiError";
 const logout = asyncHandler(async (req, res) => {
   const userId = req.body.user?._id
 
-  const user = User.findByIdAndUpdate(
+  const user = await User.findByIdAndUpdate(
     userId,
     {
       $set: {
