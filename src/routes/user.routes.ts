@@ -4,6 +4,7 @@ import { signup } from "../controllers/signup.controller";
 import { upload } from "../middlewares/multer.middlware";
 import { verifyJwt } from "../middlewares/auth.middleware";
 import { logout } from "../controllers/logout.controller";
+import { refreshAccessToken } from "../controllers/refreshAccessToken.controller";
 
 const router = Router()
 
@@ -31,6 +32,11 @@ router
 router
   .route("/logout")
   .post(verifyJwt, logout)
+
+
+router
+  .route('/refresh-token')
+  .post(refreshAccessToken)
 
 export default router
 
