@@ -95,7 +95,7 @@ userSchema.methods.matchRefreshToken = function(refreshToken: string) {
 
 export const User = model('User', userSchema)
 export type UserType = InferSchemaType<typeof userSchema> & Document & {
-  isPasswordCorrect: (password: string) => Promise<string>,
+  isPasswordCorrect: (password: string) => Promise<boolean>,
   generateAccessToken: () => string,
   generateRefreshToken: () => string,
   matchRefreshToken: (refreshToken: string) => boolean

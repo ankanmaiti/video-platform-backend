@@ -5,6 +5,8 @@ import { upload } from "../middlewares/multer.middlware";
 import { verifyJwt } from "../middlewares/auth.middleware";
 import { logout } from "../controllers/logout.controller";
 import { refreshAccessToken } from "../controllers/refreshAccessToken.controller";
+import { getCurrentUser } from "../controllers/currentUser.controller";
+import { changePassword } from "../controllers/password.controller";
 
 const router = Router()
 
@@ -32,6 +34,15 @@ router
 router
   .route("/logout")
   .post(verifyJwt, logout)
+
+router
+  .route('/details')
+  .get(verifyJwt, getCurrentUser)
+
+
+router
+  .route('/change-password')
+  .post(verifyJwt, changePassword)
 
 
 router
