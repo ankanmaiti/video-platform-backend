@@ -7,6 +7,7 @@ import { logout } from "../controllers/logout.controller";
 import { refreshAccessToken } from "../controllers/refreshAccessToken.controller";
 import { getCurrentUser } from "../controllers/currentUser.controller";
 import { changePassword } from "../controllers/password.controller";
+import { getWatchHistory } from "../controllers/watchHistory.controller";
 
 const router = Router()
 
@@ -38,6 +39,10 @@ router
 router
   .route('/details')
   .get(verifyJwt, getCurrentUser)
+
+router
+  .route('/watch-history')
+  .get(verifyJwt, getWatchHistory)
 
 
 router
