@@ -46,6 +46,8 @@ export const getChannelDetails = async (username: string, userId: string) => awa
     $project: {
       username: 1,
       fullname: 1,
+      subscribedTo: 1,
+      subscribers: 1,
       subscriberCount: 1,
       subscribedToCount: 1,
       isSubscribed: 1,
